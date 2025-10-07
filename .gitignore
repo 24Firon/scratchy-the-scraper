@@ -13,3 +13,4 @@ downloads/
 test-page.js
 test-simple.js
 install-files.sh
+.context-private.md
