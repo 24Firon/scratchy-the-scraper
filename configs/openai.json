@@ -1,0 +1,20 @@
+{
+  "projectName": "openai-docs",
+  "baseUrl": "https://platform.openai.com",
+  "strategy": "docs",
+  "discovery": {
+    "method": "sitemap",
+    "sitemapUrl": "https://platform.openai.com/sitemap.xml",
+    "filterRegex": "(docs|api|guides)/"
+  },
+  "output": {
+    "format": "markdown",
+    "includeScreenshots": true,
+    "includeAssets": true
+  },
+  "performance": {
+    "maxConcurrentContexts": 2,
+    "navigationTimeoutMs": 90000,
+    "waitAfterLoadMs": 700
+  }
+}

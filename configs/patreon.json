@@ -1,0 +1,14 @@
+{
+  "projectName": "patreon-posts",
+  "baseUrl": "https://patreon.com",
+  "strategy": "patreon",
+  "discovery": {
+    "method": "authenticated",
+    "loginRequired": true
+  },
+  "output": {
+    "format": "markdown",
+    "includeScreenshots": true,
+    "includeAssets": true
+  }
+}

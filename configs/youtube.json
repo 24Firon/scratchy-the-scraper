@@ -1,0 +1,16 @@
+{
+  "projectName": "youtube-transcripts",
+  "baseUrl": "https://youtube.com",
+  "strategy": "youtube",
+  "discovery": {
+    "method": "manual",
+    "urls": [
+      "https://youtube.com/@example"
+    ]
+  },
+  "output": {
+    "format": "markdown",
+    "includeScreenshots": false,
+    "includeAssets": true
+  }
+}

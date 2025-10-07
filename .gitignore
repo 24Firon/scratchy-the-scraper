@@ -1,0 +1,12 @@
+node_modules/
+output/
+logs/
+.env
+playwright/.auth/
+downloads/
+*.log
+.DS_Store
+*.swp
+*.swo
+.vscode/
+.idea/

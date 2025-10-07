@@ -1,0 +1,14 @@
+{
+  "projectName": "skool-courses",
+  "baseUrl": "https://skool.com",
+  "strategy": "skool",
+  "discovery": {
+    "method": "authenticated",
+    "loginRequired": true
+  },
+  "output": {
+    "format": "markdown",
+    "includeScreenshots": true,
+    "includeAssets": true
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "name": "scratchy-the-scraper",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Universal web scraping framework with Docker, Playwright, multi-site strategies",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js",
+    "auth": "node auth.setup.js"
+  },
+  "keywords": ["scraping", "playwright", "automation", "docker"],
+  "author": "24Firon",
+  "license": "MIT",
+  "dependencies": {
+    "playwright": "^1.56.0",
+    "inquirer": "^9.2.11",
+    "turndown": "^7.2.0",
+    "jsdom": "^24.1.0",
+    "yaml": "^2.5.0",
+    "redis": "^4.6.10",
+    "axios": "^1.6.0"
+  }
+}
