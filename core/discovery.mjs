@@ -19,15 +19,16 @@ async function discoverFromSitemap(config) {
     const dom = new JSDOM(response.data, { contentType: 'text/xml' });
     const locs = dom.window.document.querySelectorAll('loc');
     
-    let urls = Array.from(locs).map(loc => loc.textContent);
+    let urls = Array.from(locs).map(loc => loc.textContent.trim());
     
     if (config.discovery.filterRegex) {
       const regex = new RegExp(config.discovery.filterRegex);
       urls = urls.filter(url => regex.test(url));
     }
     
-    console.log(`✓ ${urls.length} URLs gefunden`);
+    console.log('✓ ' + urls.length + ' URLs gefunden');
     return urls;
+    
   } catch (err) {
     console.error('❌ Sitemap-Fehler:', err.message);
     return [];

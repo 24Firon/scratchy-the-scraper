@@ -14,7 +14,7 @@
   },
   "performance": {
     "maxConcurrentContexts": 2,
-    "navigationTimeoutMs": 90000,
-    "waitAfterLoadMs": 700
+    "navigationTimeoutMs": 30000,
+    "waitAfterLoadMs": 500
   }
 }
