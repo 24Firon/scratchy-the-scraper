@@ -1,19 +1,18 @@
-version: '3.9'
-
 services:
   scratchy:
-    image: mcr.microsoft.com/playwright:v1.50.0-noble
+    image: mcr.microsoft.com/playwright:v1.56.0-noble
     container_name: scratchy
     working_dir: /opt/scratchy
     network_mode: host
     environment:
       - NODE_ENV=production
       - SCRATCHY_HOME=/opt/scratchy
-      - N8N_WEBHOOK_URL={{SCRATCHY_N8N_WEBHOOK_URL}}
-      - AIRTABLE_API_KEY={{SCRATCHY_AIRTABLE_API_KEY}}
-      - AIRTABLE_BASE_ID={{SCRATCHY_AIRTABLE_BASE_ID}}
-      - SUPABASE_URL={{SCRATCHY_SUPABASE_URL}}
-      - SUPABASE_SERVICE_KEY={{SCRATCHY_SUPABASE_SERVICE_KEY}}
+      - N8N_WEBHOOK_URL=${SCRATCHY_N8N_WEBHOOK_URL}
+      - AIRTABLE_API_KEY=${SCRATCHY_AIRTABLE_API_KEY}
+      - AIRTABLE_BASE_ID=${SCRATCHY_AIRTABLE_BASE_ID}
+      - SUPABASE_URL=${SCRATCHY_SUPABASE_URL}
+      - SUPABASE_SERVICE_KEY=${SCRATCHY_SUPABASE_SERVICE_KEY}
+      - GDRIVE_SERVICE_ACCOUNT_KEY=${GDRIVE_SERVICE_ACCOUNT_KEY}
     volumes:
       - ./:/opt/scratchy
       - ./output:/opt/scratchy/output

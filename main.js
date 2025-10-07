@@ -5,6 +5,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { runDocsStrategy } from './strategies/docs.mjs';
 import { runSkoolStrategy } from './strategies/skool.mjs';
+import { runSkoolInteractiveStrategy } from './strategies/skool-interactive.mjs';
 import { pushToAirtable } from './adapters/airtable.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -41,7 +42,8 @@ const answers = await inquirer.prompt([
     type: 'confirm',
     name: 'useAirtable',
     message: 'Zu Airtable hochladen?',
-    default: false
+    default: false,
+    when: (answers) => answers.project !== 'skool'
   }
 ]);
 
@@ -51,13 +53,15 @@ const config = JSON.parse(await fs.readFile(configPath, 'utf8'));
 if (config.strategy === 'docs') {
   await runDocsStrategy(config);
 } else if (config.strategy === 'skool') {
+  await runSkoolInteractiveStrategy(config);
+} else if (config.strategy === 'skool-simple') {
   await runSkoolStrategy(config);
 } else {
   console.log(`⚠️ Strategy "${config.strategy}" noch nicht implementiert`);
   process.exit(0);
 }
 
-if (answers.useAirtable) {
+if (answers.useAirtable && config.strategy === 'docs') {
   const outputDir = path.join(__dirname, 'output', config.projectName);
   try {
     const dates = await fs.readdir(outputDir);
